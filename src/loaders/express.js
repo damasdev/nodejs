@@ -3,11 +3,14 @@ const helmet = require("helmet");
 const xss = require("xss-clean");
 const compression = require("compression");
 const cors = require("cors");
+const morgan = require("./morgan");
 
 const routes = require("../api");
 
 module.exports = {
   init: async function ({ app }) {
+    app.disable("etag");
+
     // set security HTTP headers
     app.use(helmet());
 
@@ -33,9 +36,13 @@ module.exports = {
     app.use(cors());
     app.options("*", cors());
 
+    // http request logger
+    app.use(morgan.successHandler);
+    app.use(morgan.errorHandler);
+
     // set root endpoint
     app.get("/", (req, res) => {
-      res.json({ message: "Welcome" });
+      res.status(200).send({ message: "Welcome" });
     });
 
     // register all routes
@@ -43,7 +50,7 @@ module.exports = {
 
     // send back a 404 error for any unknown api request
     app.use((req, res, next) => {
-      next(new Error("not found"));
+      res.status(404).send({ message: "not found" });
     });
   },
 };
