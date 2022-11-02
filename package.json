@@ -4,7 +4,7 @@
   "description": "Node JS Starter Kit",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/damasdev/nodejs/issues"
   },
-  "homepage": "https://github.com/damasdev/nodejs#readme"
+  "homepage": "https://github.com/damasdev/nodejs#readme",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "helmet": "^6.0.0",
+    "winston": "^3.8.2",
+    "xss-clean": "^0.1.1"
+  }
 }
