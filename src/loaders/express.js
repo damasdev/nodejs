@@ -50,7 +50,16 @@ module.exports = {
 
     // send back a 404 error for any unknown api request
     app.use((req, res, next) => {
-      res.status(404).send({ message: "not found" });
+      const err = new Error("Not Found");
+      err["status"] = 404;
+      next(err);
+    });
+
+    // Error Handler
+    app.use((err, req, res, next) => {
+      res.status(err.status || 500).send({
+        message: err.message,
+      });
     });
   },
 };
