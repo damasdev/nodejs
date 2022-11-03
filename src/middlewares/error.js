@@ -8,11 +8,10 @@ module.exports = {
     let error = err;
 
     if (!(error instanceof ApiError)) {
-      let statusCode = error.statusCode || httpStatus.INTERNAL_SERVER_ERROR;
+      let statusCode = httpStatus.INTERNAL_SERVER_ERROR;
       let message = error.message || httpStatus[statusCode];
 
       if (config.env === "production") {
-        statusCode = httpStatus.INTERNAL_SERVER_ERROR;
         message = httpStatus[httpStatus.INTERNAL_SERVER_ERROR];
       }
 
