@@ -1,11 +1,10 @@
 const httpStatus = require("http-status");
 const { catchAsync } = require("../middlewares/error");
-const pick = require("../helpers/pick");
+const { userService } = require("../services");
 
 module.exports = {
   index: catchAsync(async (req, res) => {
-    const body = pick(req.query, ["id"]);
-
-    res.status(httpStatus.OK).send(body);
+    const results = await userService.findAll();
+    res.status(httpStatus.OK).send(results);
   }),
 };
