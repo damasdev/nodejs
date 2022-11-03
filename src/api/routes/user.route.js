@@ -1,8 +1,10 @@
 const { Router } = require("express");
 const router = Router();
 
-router.get("/", (req, res) => {
-  res.status(200).send({ message: "User Route" });
-});
+const validate = require("./../middlewares/validate");
+const { userValidation } = require("./../../validations");
+const { userController } = require("./../../controllers");
+
+router.get("/", validate(userValidation.index), userController.index);
 
 module.exports = router;
