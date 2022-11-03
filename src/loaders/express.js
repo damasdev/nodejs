@@ -3,7 +3,11 @@ const helmet = require("helmet");
 const xss = require("xss-clean");
 const compression = require("compression");
 const cors = require("cors");
-const morgan = require("./morgan");
+const httpStatus = require("http-status");
+
+const morgan = require("../helpers/morgan");
+const { ApiError } = require("../helpers/error");
+const { errorConverter, errorHandler } = require("../api/middlewares/error");
 
 const routes = require("../api");
 
@@ -50,16 +54,13 @@ module.exports = {
 
     // send back a 404 error for any unknown api request
     app.use((req, res, next) => {
-      const err = new Error("Not Found");
-      err["status"] = 404;
-      next(err);
+      next(new ApiError(httpStatus.NOT_FOUND, "Not Found"));
     });
 
-    // Error Handler
-    app.use((err, req, res, next) => {
-      res.status(err.status || 500).send({
-        message: err.message,
-      });
-    });
+    // convert error to ApiError, if needed
+    app.use(errorConverter);
+
+    // handle error
+    app.use(errorHandler);
   },
 };
