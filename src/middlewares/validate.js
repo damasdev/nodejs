@@ -11,11 +11,12 @@ const validate = (schema) => (req, res, next) => {
     .validate(object);
 
   if (error) {
-    const errorMessage = error.details
-      .map((details) => details.message)
-      .join(", ");
-
-    return next(new ApiError(httpStatus.UNPROCESSABLE_ENTITY, errorMessage));
+    return next(
+      new ApiError(
+        httpStatus.UNPROCESSABLE_ENTITY,
+        error.details.shift().message
+      )
+    );
   }
 
   Object.assign(req, value);
