@@ -1,5 +1,5 @@
 const httpStatus = require("http-status");
-const { catchAsync } = require("../api/middlewares/error");
+const { catchAsync } = require("../middlewares/error");
 const pick = require("../helpers/pick");
 
 module.exports = {
