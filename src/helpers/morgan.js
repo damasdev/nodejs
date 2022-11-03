@@ -9,7 +9,7 @@ const getIpFormat = () => {
 };
 
 const successResponseFormat = `${getIpFormat()}:method :url :status - :response-time ms`;
-const errorResponseFormat = `${getIpFormat()}:method :url :status - :response-time ms - message: :message`;
+const errorResponseFormat = `${getIpFormat()}:method :url :status - :response-time ms - remark: :message`;
 
 module.exports = {
   successHandler: morgan(successResponseFormat, {

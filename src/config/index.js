@@ -3,5 +3,6 @@ dotenv.config();
 
 module.exports = {
   port: process.env.PORT,
-  env: process.env.ENV,
+  env: process.env.APP_ENV,
+  debug: process.env.DEBUG_MODE,
 };

@@ -28,10 +28,10 @@ module.exports = {
 
     const response = {
       message,
-      ...(config.env === "development" && { stack: err.stack }),
+      ...(config.debug === "true" && { stack: err.stack }),
     };
 
-    if (config.env === "development") {
+    if (config.debug === "true") {
       logger.error(err.stack);
     }
 
