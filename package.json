@@ -4,7 +4,8 @@
   "description": "Node JS Starter Kit",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "dev": "nodemon src/index.js",
+    "start": "pm2 start app.config.js --no-daemon"
   },
   "repository": {
     "type": "git",
@@ -28,5 +29,9 @@
     "morgan": "^1.10.0",
     "winston": "^3.8.2",
     "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "pm2": "^5.2.2",
+    "nodemon": "^2.0.20"
   }
 }
