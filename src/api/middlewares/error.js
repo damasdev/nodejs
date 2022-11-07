@@ -1,7 +1,7 @@
 const httpStatus = require("http-status");
-const config = require("../config");
-const logger = require("../helpers/logger");
-const { ApiError } = require("../helpers/error");
+const config = require("../../config");
+const logger = require("../../helpers/logger");
+const { ApiError } = require("../../helpers/error");
 
 module.exports = {
   errorConverter: (err, req, res, next) => {

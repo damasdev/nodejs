@@ -26,12 +26,13 @@
     "helmet": "^6.0.0",
     "http-status": "^1.5.3",
     "joi": "^17.7.0",
+    "mongoose": "^6.7.1",
     "morgan": "^1.10.0",
     "winston": "^3.8.2",
     "xss-clean": "^0.1.1"
   },
   "devDependencies": {
-    "pm2": "^5.2.2",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "pm2": "^5.2.2"
   }
 }

@@ -7,9 +7,9 @@ const httpStatus = require("http-status");
 
 const morgan = require("../helpers/morgan");
 const { ApiError } = require("../helpers/error");
-const { errorConverter, errorHandler } = require("../middlewares/error");
+const { errorConverter, errorHandler } = require("../api/middlewares/error");
 
-const routes = require("../routes");
+const routes = require("../api");
 
 module.exports = {
   init: async function ({ app }) {

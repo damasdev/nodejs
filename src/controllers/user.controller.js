@@ -1,6 +1,6 @@
 const httpStatus = require("http-status");
-const { catchAsync } = require("../middlewares/error");
-const { userService } = require("../services");
+const { catchAsync } = require("../api/middlewares/error");
+const { userService } = require("../service");
 
 module.exports = {
   index: catchAsync(async (req, res) => {
