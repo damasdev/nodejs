@@ -1,4 +1,4 @@
-const { userRepository } = require('../repository');
+const { userRepository } = require('../repositories');
 
 module.exports = {
     findAll: async () => {
