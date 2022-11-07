@@ -6,7 +6,7 @@ const express = require("express");
 async function start() {
   const server = express();
 
-  await loaders.init({ app: server });
+  await loaders.init({ app: server, config: config });
 
   server
     .listen(config.port, () => {
