@@ -1,7 +1,12 @@
-const { userRepository } = require("../repositories");
+const { userRepository } = require("@repositories");
 
 module.exports = {
   findAll: async () => {
-    return userRepository.findAll();
+    const result = await userRepository.findAll();
+
+    return {
+      message: "OK",
+      data: result,
+    };
   },
 };

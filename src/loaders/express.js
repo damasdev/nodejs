@@ -5,11 +5,11 @@ const compression = require("compression");
 const cors = require("cors");
 const httpStatus = require("http-status");
 
-const morgan = require("../helpers/morgan");
-const { ApiError } = require("../helpers/error");
-const { errorConverter, errorHandler } = require("../middlewares/error");
+const morgan = require("@helpers/morgan");
+const { ApiError } = require("@helpers/error");
+const { errorConverter, errorHandler } = require("@middlewares/error");
 
-const routes = require("../routes");
+const routes = require("@routes");
 
 module.exports = async function ({ app }) {
   app.disable("etag");

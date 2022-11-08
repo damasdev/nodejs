@@ -1,6 +1,8 @@
-const config = require("./config");
-const loaders = require("./loaders");
-const logger = require("./helpers/logger");
+require("module-alias/register");
+
+const config = require("@config");
+const loaders = require("@loaders");
+const logger = require("@helpers/logger");
 const express = require("express");
 
 async function start() {

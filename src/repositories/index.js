@@ -1,1 +1,1 @@
-module.exports.userRepository = require("./user.repository");
+module.exports.userRepository = require("@repositories/user.repository");

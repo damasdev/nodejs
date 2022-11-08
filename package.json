@@ -18,6 +18,18 @@
     "url": "https://github.com/damasdev/nodejs/issues"
   },
   "homepage": "https://github.com/damasdev/nodejs#readme",
+  "_moduleAliases": {
+    "@config": "src/config",
+    "@controllers": "src/controllers",
+    "@helpers": "src/helpers",
+    "@loaders": "src/loaders",
+    "@middlewares": "src/middlewares",
+    "@models": "src/models",
+    "@repositories": "src/repositories",
+    "@routes": "src/routes",
+    "@services": "src/services",
+    "@validations": "src/validations"
+  },
   "dependencies": {
     "compression": "^1.7.4",
     "cors": "^2.8.5",
@@ -26,6 +38,7 @@
     "helmet": "^6.0.0",
     "http-status": "^1.5.3",
     "joi": "^17.7.0",
+    "module-alias": "^2.2.2",
     "mongoose": "^6.7.1",
     "morgan": "^1.10.0",
     "winston": "^3.8.2",
