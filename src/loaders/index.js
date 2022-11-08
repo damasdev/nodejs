@@ -1,15 +1,15 @@
-const express = require("./express");
-const mongoose = require("./mongoose");
+const expressLoader = require("./express");
+const mongooseLoader = require("./mongoose");
 const logger = require("../helpers/logger");
 
 module.exports = {
   init: async function ({ app, config }) {
     try {
-      await mongoose.init(config);
+      await mongooseLoader(config);
       logger.info("Database initialized successfully");
 
-      await express.init({ app: app });
-      logger.info("Express initialized successfully");
+      await expressLoader({ app: app });
+      logger.info("Application initialized successfully");
     } catch (err) {
       logger.error(err);
       process.exit(1);
