@@ -1,5 +1,5 @@
 module.exports = {
-    findAll: async () => {
-        return [{ name: 'Damas Amirul Karim' }];
-    }
+  findAll: async () => {
+    return [{ name: "Damas Amirul Karim" }];
+  },
 };

@@ -6,7 +6,7 @@ module.exports = {
   init: async function ({ app, config }) {
     try {
       await mongoose.init(config);
-      logger.info('Database initialized successfully')
+      logger.info("Database initialized successfully");
 
       await express.init({ app: app });
       logger.info("Express initialized successfully");
