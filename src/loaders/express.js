@@ -5,8 +5,8 @@ const compression = require("compression");
 const cors = require("cors");
 const httpStatus = require("http-status");
 
-const morgan = require("@helpers/morgan");
-const { ApiError } = require("@helpers/error");
+const morgan = require("@utils/morgan");
+const { ApiError } = require("@utils/error");
 const { errorConverter, errorHandler } = require("@middlewares/error");
 
 const routes = require("@routes");

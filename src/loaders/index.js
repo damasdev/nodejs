@@ -1,6 +1,6 @@
 const expressLoader = require("@loaders/express");
 const mongooseLoader = require("@loaders/mongoose");
-const logger = require("@helpers/logger");
+const logger = require("@utils/logger");
 
 module.exports = {
   init: async function ({ app, config }) {

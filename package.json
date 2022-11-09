@@ -21,7 +21,7 @@
   "_moduleAliases": {
     "@config": "src/config",
     "@controllers": "src/controllers",
-    "@helpers": "src/helpers",
+    "@utils": "src/utils",
     "@loaders": "src/loaders",
     "@middlewares": "src/middlewares",
     "@models": "src/models",

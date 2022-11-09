@@ -2,7 +2,7 @@ require("module-alias/register");
 
 const config = require("@config");
 const loaders = require("@loaders");
-const logger = require("@helpers/logger");
+const logger = require("@utils/logger");
 const express = require("express");
 
 async function start() {
